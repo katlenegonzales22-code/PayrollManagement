@@ -38,120 +38,152 @@ $totalDepartment = $departmentData['total_department'];
         }
 
         body{
-            background:
-            linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)),
-            url('image/dashboard.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
+            background: #f4f7fc;
+            min-height:100vh;
         }
 
         .dashboard-container{
-            padding: 30px;
+            padding:30px;
         }
 
-        .welcome-box{
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            color: white;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        .hero-section{
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius:25px;
+            padding:40px;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            box-shadow:0 10px 25px rgba(0,0,0,0.15);
+            margin-bottom:30px;
         }
 
-        .welcome-box h1{
-            font-size: 35px;
-            font-weight: bold;
+        .hero-text h1{
+            font-size:38px;
+            font-weight:bold;
+            margin-bottom:10px;
         }
 
-        .welcome-box p{
-            opacity: 0.8;
-            margin-top: 8px;
+        .hero-text p{
+            opacity:0.9;
+            font-size:16px;
+        }
+
+        .hero-icon{
+            font-size:90px;
+            opacity:0.2;
         }
 
         .card-grid{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+            gap:25px;
         }
 
         .dashboard-card{
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            padding: 30px;
-            color: white;
-            transition: 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            background:white;
+            border-radius:22px;
+            padding:30px;
+            position:relative;
+            overflow:hidden;
+            transition:0.3s ease;
+            box-shadow:0 8px 20px rgba(0,0,0,0.08);
         }
 
         .dashboard-card:hover{
-            transform: translateY(-8px);
+            transform:translateY(-6px);
         }
 
         .dashboard-card::before{
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: -40px;
-            right: -40px;
+            content:'';
+            position:absolute;
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            top:-35px;
+            right:-35px;
+            opacity:0.1;
         }
 
-        .card-red{
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        .card-red::before{
+            background:#ff4b5c;
         }
 
-        .card-blue{
-            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+        .card-blue::before{
+            background:#4e73df;
         }
 
-        .card-green{
-            background: linear-gradient(135deg, #11998e, #38ef7d);
+        .card-green::before{
+            background:#1cc88a;
         }
 
         .card-icon{
-            font-size: 50px;
-            opacity: 0.9;
-            margin-bottom: 20px;
+            width:70px;
+            height:70px;
+            border-radius:18px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:30px;
+            color:white;
+            margin-bottom:20px;
+        }
+
+        .red-icon{
+            background:linear-gradient(135deg,#ff416c,#ff4b2b);
+        }
+
+        .blue-icon{
+            background:linear-gradient(135deg,#36d1dc,#5b86e5);
+        }
+
+        .green-icon{
+            background:linear-gradient(135deg,#11998e,#38ef7d);
         }
 
         .card-title{
-            font-size: 18px;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            opacity: 0.9;
+            color:#777;
+            font-size:15px;
+            margin-bottom:10px;
+            letter-spacing:1px;
         }
 
         .card-value{
-            font-size: 35px;
-            font-weight: bold;
+            font-size:34px;
+            font-weight:bold;
+            color:#222;
         }
 
         .footer-text{
-            margin-top: 40px;
-            text-align: center;
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
+            margin-top:40px;
+            text-align:center;
+            color:#777;
+            font-size:14px;
         }
 
         @media(max-width:768px){
             .dashboard-container{
-                padding: 15px;
+                padding:15px;
             }
 
-            .welcome-box h1{
-                font-size: 25px;
+            .hero-section{
+                padding:30px 20px;
+            }
+
+            .hero-text h1{
+                font-size:28px;
+            }
+
+            .hero-icon{
+                display:none;
             }
         }
     </style>
 </head>
 
 <body>
+    
 
 <?php include('parts/header.php') ?>
 <?php include('parts/sidebar.php') ?>
@@ -167,63 +199,76 @@ $totalDepartment = $departmentData['total_department'];
 
     <div class="dashboard-container">
 
-        <!-- Welcome Section -->
-        <div class="welcome-box">
-            <h1>Payroll Management Dashboard</h1>
-            <p>Welcome back Admin! Monitor your employees, salaries, and departments easily.</p>
+        <!-- Hero Section -->
+        <div class="hero-section">
+
+            <div class="hero-text">
+                <h1>Payroll Dashboard</h1>
+                <p>Manage employees, salary records, and departments in one place.</p>
+            </div>
+
+            <div class="hero-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
         </div>
 
-        <!-- Cards -->
+        <!-- Dashboard Cards -->
         <div class="card-grid">
 
             <!-- Employee -->
             <div class="dashboard-card card-red">
-                <div class="card-icon">
+
+                <div class="card-icon red-icon">
                     <i class="fa-solid fa-users"></i>
                 </div>
 
                 <div class="card-title">
-                    Total Employees
+                    TOTAL EMPLOYEES
                 </div>
 
                 <div class="card-value">
                     <?php echo $totalEmployee; ?>
                 </div>
+
             </div>
 
             <!-- Salary -->
             <div class="dashboard-card card-blue">
-                <div class="card-icon">
+
+                <div class="card-icon blue-icon">
                     <i class="fa-solid fa-money-bill-wave"></i>
                 </div>
 
                 <div class="card-title">
-                    Total Salary Released
+                    TOTAL SALARY RELEASED
                 </div>
 
                 <div class="card-value">
                     ₱<?php echo number_format($totalSalary, 2); ?>
                 </div>
+
             </div>
 
             <!-- Department -->
             <div class="dashboard-card card-green">
-                <div class="card-icon">
+
+                <div class="card-icon green-icon">
                     <i class="fa-solid fa-building"></i>
                 </div>
 
                 <div class="card-title">
-                    Total Departments
+                    TOTAL DEPARTMENTS
                 </div>
 
                 <div class="card-value">
                     <?php echo $totalDepartment; ?>
                 </div>
+
             </div>
 
         </div>
 
-        <!-- Footer -->
         <div class="footer-text">
             Payroll Management System © 2026
         </div>
