@@ -205,7 +205,6 @@ $totalDepartment = $departmentData['total_department'];
             <div class="hero-text">
                 <h1>Payroll Dashboard</h1>
                 <p>Manage employees, salary records, and departments in one place.</p>
-
                  <h2>Welcome Admin 👋</h2>
             </div>
 
