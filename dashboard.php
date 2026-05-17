@@ -38,7 +38,7 @@ $totalDepartment = $departmentData['total_department'];
         }
 
         body{
-            background: #f4f7fc;
+            background: #6b8ac0;
             min-height:100vh;
         }
 
