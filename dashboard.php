@@ -67,7 +67,8 @@ $totalDepartment = $departmentData['total_department'];
 
         .hero-text p{
             opacity:0.9;
-            font-size:16px;
+            font-size:17px;
+            line-height:1.6;
         }
 
         .hero-icon{
