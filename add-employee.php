@@ -11,8 +11,7 @@ if($_POST)
     $designation = $_POST["designation"];
     $grade = $_POST["grade"];
     $department = $_POST["department"];
-
-           
+  
 
     $sql = "INSERT INTO employee (name, dob, mobile, doj, designation, grade, department) 
             VALUES ('$name','$dob','$mobile','$doj','$designation','$grade','$department')";
@@ -34,6 +33,7 @@ if($_POST)
     <?php include('parts/sidebar.php') ?>
     <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
     <div class="w3-main" style="margin-left:300px;margin-top:43px;"><br>
+
 
         <header class="w3-container" style="padding-top:22px">
             <h5><b><i class="fa fa-user"></i> Add Employee</b></h5>
