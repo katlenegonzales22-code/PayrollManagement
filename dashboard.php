@@ -282,6 +282,5 @@ $totalDepartment = $departmentData['total_department'];
 
 <script src="js/openclosemenu.js"></script>
 
-
 </body>
 </html>
